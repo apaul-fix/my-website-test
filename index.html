@@ -1,11 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
-</head>
-<body>
-  <h1>Hello World 🚀</h1>
-  <p>This is my first website using.</p>
-</body>
+<meta charset="UTF-8">
+<title>My GitHub Website</title>
 
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* NAVBAR */
+nav {
+  background: #222;
+  padding: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(to right, #007cf0, #00dfd8);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* SECTIONS */
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #007cf0;
+  color: white;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero" id="home">
+  <h1>Welcome to My Website 🚀</h1>
+  <p>Built with HTML + GitHub Pages</p>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I'm learning web development and GitHub.
+    This site is a test project to practice commits and updates.
+  </p>
+</section>
+
+<section id="projects">
+  <h2>My Projects</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Project One</h3>
+      <p>Simple HTML website.</p>
+    </div>
+
+    <div class="card">
+      <h3>Project Two</h3>
+      <p>Future Minecraft mod 👀</p>
+    </div>
+
+    <div class="card">
+      <h3>Project Three</h3>
+      <p>More coming soon.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+
+  <input type="text" id="name" placeholder="Your name">
+  <input type="email" id="email" placeholder="Your email">
+  <textarea id="message" placeholder="Message"></textarea>
+
+  <button onclick="sendMessage()">Send</button>
+
+  <p id="result"></p>
+</section>
+
+<footer>
+  © 2026 My Website
+</footer>
+
+<script>
+function sendMessage() {
+  const name = document.getElementById("name").value;
+
+  if(name === "") {
+    alert("Please enter your name!");
+    return;
+  }
+
+  document.getElementById("result").innerText =
+    "Thanks, " + name + "! Message sent (not really 😄)";
+}
+</script>
+
+</body>
 </html>
